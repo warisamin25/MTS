@@ -45,8 +45,8 @@ SEQUENCE:
   TEACHER_FORCE_RATIO: 1.0
   TWO_CONV: True
 DATASETS:
-  TRAIN: ("synthtext_train",)
-  TEST: ("icdar_2013_test",)
+  TRAIN: ("icdar_2015_train",)
+  TEST: ("icdar_2015_test",)
 DATALOADER:
   SIZE_DIVISIBILITY: 32
   NUM_WORKERS: 4
@@ -56,8 +56,8 @@ SOLVER:
   WARMUP_FACTOR: 0.1
   WEIGHT_DECAY: 0.0001
   STEPS: (100000, 160000)
-  MAX_ITER: 300000
-  IMS_PER_BATCH: 8
+  MAX_ITER: 4
+  IMS_PER_BATCH: 4
 OUTPUT_DIR: "./outputs/pretrain"
 TEST:
   VIS: False

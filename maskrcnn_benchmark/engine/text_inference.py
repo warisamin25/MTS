@@ -303,10 +303,10 @@ def prepare_results_for_evaluation(predictions, output_folder, model_name, vis=F
 	results_dir = os.path.join(output_folder, model_name+'_results')
 	if not os.path.isdir(results_dir):
 		os.mkdir(results_dir)
-	if vis:
-		visu_dir = os.path.join(output_folder, model_name+'_visu')
-		if not os.path.isdir(visu_dir):
-			os.mkdir(visu_dir)
+	# if vis:
+	# 	visu_dir = os.path.join(output_folder, model_name+'_visu')
+	# 	if not os.path.isdir(visu_dir):
+	# 		os.mkdir(visu_dir)
 	for image_path, prediction in predictions.items():
 		im_name = image_path.split('/')[-1]
 		global_prediction, char_mask, boxes_char, seq_words, seq_scores, detailed_seq_scores = prediction[0], prediction[1], prediction[2], prediction[3], prediction[4], prediction[5]
@@ -342,10 +342,10 @@ def prepare_results_for_evaluation(predictions, output_folder, model_name, vis=F
 			else:
 				result_log = [int(x * 1.0) for x in box[:4]] + polygon + [word] + [seq_word] + [score] + [rec_score] + [seq_score] + [char_score] + [detailed_seq_score] 
 			result_logs.append(result_log)
-		if vis:
-			colors = creat_color_map(37, 255)
-			visualization(img, polygons, char_polygons, words, resize_ratio, colors)
-			img.save(os.path.join(visu_dir,im_name))
+		# if vis:
+		# 	colors = creat_color_map(37, 255)
+		# 	visualization(img, polygons, char_polygons, words, resize_ratio, colors)
+		# 	img.save(os.path.join(visu_dir,im_name))
 		format_output(results_dir, result_logs, im_name)
 
 def inference(
@@ -391,8 +391,8 @@ def inference(
 		# predictions = _accumulate_predictions_from_multiple_gpus(predictions)
 		# if not is_main_process():
 		# 	return
-
-		if output_folder:
-			torch.save(predictions, predictions_path)
+	
+		# if output_folder:
+		# 	torch.save(predictions, predictions_path)
 
 	prepare_results_for_evaluation(predictions, output_folder, model_name, vis=cfg.TEST.VIS)

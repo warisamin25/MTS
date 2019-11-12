@@ -40,6 +40,11 @@ class DatasetCatalog(object):
             # "icdar2015/test_gts",
 
         ),
+        "inputImg": (
+            "inputImg/test_images",
+            # "icdar2015/test_gts",
+
+        ),
         "synthtext_train":(
             "synthtext/train_images",
             "synthtext/train_gts",
@@ -106,6 +111,24 @@ class DatasetCatalog(object):
                 args=args,
                 factory="IcdarDataset",
             )
+        
+        elif "inputImg" in name:
+            data_dir = DatasetCatalog.DATA_DIR
+            attrs=DatasetCatalog.DATASETS[name]
+            if len(attrs)>1:
+                gts_dir = os.path.join(data_dir,attrs[1])
+            else:
+                gts_dir = None
+            args=dict(
+                use_charann=False,
+                imgs_dir=os.path.join(data_dir,attrs[0]),
+                gts_dir=gts_dir,
+            )
+            return dict(
+                args=args,
+                factory="IcdarDataset",
+            )
+            
         elif "synthtext" in name:
             data_dir = DatasetCatalog.DATA_DIR
             attrs=DatasetCatalog.DATASETS[name]

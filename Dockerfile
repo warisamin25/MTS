@@ -38,10 +38,10 @@ RUN wget "https://raw.githubusercontent.com/circulosmeos/gdown.pl/master/gdown.p
 RUN chmod +rwx gdown.pl
 
 # clone repo
-RUN ./gdown.pl https://drive.google.com/file/d/14Z28qrhFAk5c6LxdVUCuZ0MVNctoIDkJ/view repo.tar.xz
+RUN ./gdown.pl https://drive.google.com/file/d/1b8xY81gjbGa5X3ImbkT9qclOFOP8aDfg/view repo.tar.xz
 RUN tar -xvf repo.tar.xz
 RUN rm repo.tar.xz
-WORKDIR MaskTextSpotter
+WORKDIR MaskTextSpotter1
 # build
 RUN python setup.py build develop
 EXPOSE 8001

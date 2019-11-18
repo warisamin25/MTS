@@ -27,6 +27,7 @@ dist/
 # project dirs
 /datasets
 /models
+/outputs
 /vis
 *.jpg
 *.JPG

@@ -81,9 +81,9 @@ def main():
 
     if os.path.exists(os.path.join(config.UPLOAD_FOLDER, 'test_list.txt')):
         os.remove(os.path.join(config.UPLOAD_FOLDER, 'test_list.txt'))
-
-    [os.remove(os.path.join(config.INFERENCE_RESULT, f)) for f in os.listdir(config.INFERENCE_RESULT)]
-    [os.remove(os.path.join(config.INFERENCE_VISU, f)) for f in os.listdir(config.INFERENCE_VISU)]
+    # Uncomment this code for CPU inference
+    # [os.remove(os.path.join(config.INFERENCE_RESULT, f)) for f in os.listdir(config.INFERENCE_RESULT)]
+    # [os.remove(os.path.join(config.INFERENCE_VISU, f)) for f in os.listdir(config.INFERENCE_VISU)]
 
     return Response(response=response, status=200, mimetype="application/json")
 

@@ -1,0 +1,16 @@
+cython
+numpy
+ninja
+yacs
+cython
+matplotlib
+tqdm
+opencv-python
+shapely
+scipy
+tensorboardX
+torch==1.3.1+cpu 
+torchvision==0.4.2+cpu
+flask
+requests
+pycocotools

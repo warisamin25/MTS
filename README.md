@@ -25,5 +25,5 @@ docker build -t mts .
 docker run --gpus all --ipc=host -p 8001:8001 mts:lastest
 
 #### Note:
-Current batch size is set to **4**.
-You can change it [here](https://github.com/FortressIQ/MTS/blob/331418d62783cbb90ebcce5b274c605b5aaf9f94/configs/finetune.yaml#L73).
+Current batch size is set to **2**.
+You can change it [here](https://github.com/FortressIQ/MTS/blob/bf888d5f08c8f306819f146124f7bc90d8bbe6e2/configs/finetune.yaml#L73).

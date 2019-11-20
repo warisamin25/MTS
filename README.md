@@ -16,6 +16,9 @@ $ python3 main_api_batch.py
 ## Curl Request
 curl -X POST http://localhost:8001/infer  -H 'content-type: multipart/form-data'  -F files=@img_1.jpg -F files=@img_2.jpg -F files=@img_3.jpg -F files=@img_4.jpg
 
+## Inference result
+You can check the inference output in the **outputs/finetune/inference/icdar_2015_test** directory
+
 ## To build the Dockerfile
 docker build -t mts .
 #### To run the Dockerfile
